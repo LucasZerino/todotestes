@@ -6,7 +6,7 @@ cd release
 
 #Pulling latest master from Github
 rm -R -f leantime
-git clone https://github.com/Leantime/leantime.git
+git clone https://github.com/LucasZerino/todotestes
 cd leantime
 
 #Pulling dependencies in
@@ -37,9 +37,9 @@ find ./public/js/ -mindepth 1 ! -name "*compiled*" -exec rm -f -r {} \;
 
 #Exiting release folder and creating archives for Github
 cd ..
-version=`grep "appVersion" leantime/config/appSettings.php |awk -F' = ' '{print substr($2,2,length($2)-3)}'`
-zip -r -X "Leantime-v$version$1.zip" leantime
-tar -zcvf "Leantime-v$version$1.tar.gz" leantime
+version=`grep "appVersion" todotestes/config/appSettings.php |awk -F' = ' '{print substr($2,2,length($2)-3)}'`
+zip -r -X "todotestes-v$version$1.zip" leantime
+tar -zcvf "todotestes-v$version$1.tar.gz" leantime
 
 #Removing 
 rm -R leantime
